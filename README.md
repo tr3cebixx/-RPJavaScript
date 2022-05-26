@@ -1,3 +1,5 @@
+26-5 hi, it's me again jajajajaj esto de nuevo.
+
 6-4 lo que vengo sufriendo con funciones, por fin las hice funcionar. primera entrega del proyecto final.
 
 4-4 pude solucionar solo el problema arrays y el problema general de mis condicionales, creo que ahora esta bien.

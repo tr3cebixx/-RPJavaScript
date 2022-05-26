@@ -42,14 +42,12 @@ class UserBase {
 
 function pickUser() {
   user = prompt(
-    "Bienvenido a RPJavaScript, defensor del Código. Elige tu nombre (con cuidado, todos lo recordarán!)"
+    "Bienvenido a Javascriptia, defensor del Código. Elige tu nombre (con cuidado, todos lo recordarán!)"
   );
 
   if (user !== "") {
     alert(
-      "Así que te llamas " +
-        user +
-        "? Un nombre apropiado para uno de los defensores del Código."
+      `Así que te llamas ${user}? Un nombre apropiado para uno de los defensores del Código.`
     );
   } else {
     while (user == "") {
@@ -57,9 +55,9 @@ function pickUser() {
     }
   }
 
-  user = user.toLocaleLowerCase();
+  user = user.toLowerCase();
 
-  return console.log(user);
+  return console.log(user); //viendo si lo saco
 }
 
 function pickPassword() {
@@ -73,7 +71,7 @@ function pickPassword() {
     } else {
       while (password2 !== password) {
         password2 = prompt(
-          "Hey, las contraseñas no coinciden, escribe con mas cuidado ${user}"
+          `Hey, las contraseñas no coinciden, escribe con mas cuidado, ${user}!`
         );
       }
     }
@@ -86,22 +84,31 @@ function pickPassword() {
   }
 }
 
+function pickMail() {
+  mail = prompt(`Muy bien, ${user}, ahora necesitaré que me indiques tu correo electrónico para que estés al tanto de todo lo que sucede en Javascriptia`);
+  if(mail !== "" && mail.includes("@")){
+    alert(`Perfecto, ${user}, es solo cuestión de tiempo hasta que te comiencen a llegar las proximas ediciones del JS Times a: ${mail}`)
+  }else{
+    while(mail == "" || !mail.includes("@")){
+      mail = prompt(`"${mail}"? Ingresa un formato de correo válido (ej: orcusporcus@mail.com).`)
+    }
+  }
+}
+
 function pickRaza() {
   raza = prompt(
-    "Muy bien, " +
-      user +
-      " ahora cuentame, de que raza provienes?\nHumano\nOrco\nElfo\nEnano\nGoblin\nTrol\nDemonio"
+    `Muy bien, ${user} ahora cuentame, de que raza provienes?\n` + razasPermitidas.join("\n") //me gustaria que la inicial sea en mayuscula
   );
 
   raza = raza.toLowerCase();
   console.log(raza);
 
   if (razasPermitidas.includes(raza)) {
-    alert("Oh, un joven " + raza + ", tienes mucho potencial.");
+    alert(`Oh, un joven ${raza}, tienes mucho potencial.`);
   } else {
     while (!razasPermitidas.includes(raza)) {
       raza = prompt(
-        "Esa no es una raza de este mundo! Elige una raza de verdad:\n Humano\n Orco\n Elfo\n Enano\n Goblin\n Trol\n Demonio"
+        "Esa no es una raza de este mundo! Elige una raza de verdad:\n" + razasPermitidas.join("\n")
       );
       raza = raza.toLowerCase();
     }
@@ -111,7 +118,7 @@ function pickRaza() {
 
 function pickClase() {
   clase = prompt(
-    "En RPJS hay guerreros de distintas clases, que te enseñaran todo lo que necesitas para ser un gran defensor, así que deberas elegir una:\n Caballero\n Bersérker\n Paladín\n Cazador\n Asesino\n Mago\n Brujo\n Sacerdote\n Espadachín\n Caballero Oscuro\n Monje"
+    "En RPJS hay guerreros de distintas clases, que te enseñaran todo lo que necesitas para ser un gran defensor, así que deberas elegir una:\n" + clasesPermitidas.join("\n")
   );
 
   clase = clase.toLowerCase();
@@ -119,20 +126,12 @@ function pickClase() {
 
   if (clasesPermitidas.includes(clase)) {
     alert(
-      "Entonces serás " +
-        user +
-        ", el más grande " +
-        clase +
-        " entre todos los " +
-        raza +
-        "s."
+      `Entonces serás ${user}, el más grande ${clase} entre todos los ${razas}.`
     );
   } else {
     while (!clasesPermitidas.includes(clase)) {
       clase = prompt(
-        "'" +
-          clase +
-          "'?? Aquí no tenemos instructores de eso... puedes elegir entre:\n Caballero\n Bersérker\n Paladín\n Cazador\n Asesino\n Mago\n Brujo\n Sacerdote\n Espadachín\n Caballero Oscuro\n Monje"
+        `'${clase}'?? Aquí no tenemos instructores de eso... puedes elegir entre:\n` + clasesPermitidas.join("\n")
       );
       clase = clase.toLowerCase();
     }
@@ -154,6 +153,7 @@ function stats() {
 
   character.innerHTML = `<li class= "liStats">Nombre: ${user.toUpperCase()}.</li>\n<li class= "liStats">Raza: ${raza.toUpperCase()}.</li>\n<li class= "liStats">Clase: ${clase.toUpperCase()}.</li>`;
 }
+
 const profile1 = new UserBase(user, raza, clase, password, mail);
 
 for (const data in profile1) {
@@ -183,5 +183,3 @@ btnLog.addEventListener("click", login);
 console.log(profile1);
 userList.push(profile1);
 console.log(userList);
-
-// lo que quise hacer aca era que al tocar alguno de los dos botones, se borren y te mande o a register o a login pero dentro de la misma pagina, sin cambiar de .html, luego intente un par de cosas mas pero aca me quede sin pc, claramente me quede aca y ya no pude hacer nada.
