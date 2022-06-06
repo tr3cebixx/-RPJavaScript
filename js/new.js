@@ -1,28 +1,14 @@
 const userList = [];
 
-const razasPermitidas = [
-  "humano",
-  "orco",
-  "elfo",
-  "enano",
-  "goblin",
-  "trol",
-  "demonio",
-];
+const razasPermitidas = [];
+razasPermitidas.push(humano, orco, elfo, enano, goblin, trol, demonio);
+console.table(razasPermitidas);
 
-const clasesPermitidas = [
-  "caballero",
-  "berserker",
-  "paladin",
-  "cazador",
-  "asesino",
-  "mago",
-  "brujo",
-  "sacerdote",
-  "espadachin",
-  "caballero oscuro",
-  "monje",
-];
+const clasesPermitidas = [];
+clasesPermitidas.push(caballero, berserker, cazador, asesino, mago, sacerdote, espadachin, caballeroOscuro, monje);
+for (const clase of clasesPermitidas) {
+  console.log(clase)
+}
 
 let user = "";
 let raza = "";
@@ -56,8 +42,7 @@ function pickUser() {
   }
 
   user = user.toLowerCase();
-
-  return console.log(user); //viendo si lo saco
+  return user;
 }
 
 function pickPassword() {
@@ -78,7 +63,7 @@ function pickPassword() {
   } else {
     while (password == "") {
       password = prompt(
-        "Debes ingresar una contraseña, sino cualquiera podrá robarte..."
+        "Debes ingresar una buena contraseña, sino cualquiera podría robarte..."
       );
     }
   }
@@ -182,6 +167,7 @@ function createUser() {
 function register() {
   refresh();
   pickUser();
+  registration();
   pickPassword();
   pickMail();
   pickRaza();
