@@ -1,3 +1,5 @@
+//Acá creo las distintas clases con el constructor, y el array de clases permitidas.
+
 class Clase{
     constructor(name, distance, weapon1, weapon2, hp, powersource, ad, ap, def, mr){
         this.name = name;
@@ -25,3 +27,8 @@ const espadachin = new Clase("Espadachín", "Híbrido", "Estilo de katana múlti
 const caballeroOscuro = new Clase("Caballero Oscuro", "Híbrido", "Arma de dos manos", "Doble empuñadura de una mano", 500, "Necromaná", 60, 40, 45, 55);
 const monje = new Clase("Monje", "Melee", "Doble empuñadura de armas de puño/armas de una mano", "Armas de dos manos", 400, "Haki", 65, 65, 35, 35);
 
+const clasesPermitidas = [];
+clasesPermitidas.push(caballero, berserker, cazador, asesino, mago, sacerdote, espadachin, caballeroOscuro, monje);
+// for (const clase of clasesPermitidas) {
+//   console.log(clase)
+// }

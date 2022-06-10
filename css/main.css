@@ -6,15 +6,16 @@
 
 .body {
   display: block;
-  background-image: radial-gradient(#362020, #994d4d, #474541);
+  background-image: radial-gradient(#555454, #994d4d, #474541);
   text-align: center;
-  font-size: 5rem;
+  font-size: 1rem;
   min-height: 100vh; }
   .body .title {
     border: 1rem goldenrod groove;
     background-color: #474541;
     text-decoration: none;
-    color: #000000; }
+    color: #000000;
+    font-size: 5rem; }
     .body .title a:link, .body .title a:visited, .body .title a:hover, .body .title a:active {
       text-decoration: none;
       color: #000000; }
@@ -38,6 +39,64 @@
       border: 0.5rem goldenrod groove;
       background-color: #474441;
       margin-bottom: 3rem; }
+  .body #regSelects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem; }
+    .body #regSelects .registerText {
+      font-size: 3rem;
+      color: #000000;
+      text-shadow: #3f2525;
+      text-decoration: double;
+      display: block;
+      background-color: #474541;
+      border: #3f2525 groove 1rem; }
+    .body #regSelects .approvalText {
+      font-size: 3rem;
+      color: #000000;
+      text-shadow: #56b967;
+      text-decoration: underline;
+      display: block;
+      background-color: #56b967;
+      border: #1f9202 groove 1rem;
+      margin-bottom: 2rem; }
+    .body #regSelects .label {
+      font-size: 3rem;
+      color: #000000;
+      text-shadow: #3f2525;
+      text-decoration: double;
+      display: block;
+      background-color: #474541;
+      border: #3f2525 groove 1rem;
+      margin-top: 2rem; }
+    .body #regSelects #user {
+      font-size: 3rem;
+      color: #000000;
+      text-shadow: #3f2525;
+      text-decoration: double;
+      display: block;
+      background-color: #474541;
+      border: #3f2525 groove 1rem;
+      margin-top: 2rem; }
+    .body #regSelects #password {
+      font-size: 3rem;
+      color: #000000;
+      text-shadow: #3f2525;
+      text-decoration: double;
+      display: block;
+      background-color: #474541;
+      border: #3f2525 groove 1rem;
+      margin-top: 2rem; }
+    .body #regSelects .boton {
+      font-size: 3rem;
+      color: #000000;
+      text-shadow: #3f2525;
+      text-decoration: double;
+      display: block;
+      background-color: #474541;
+      border: goldenrod groove 1rem;
+      margin-top: 2rem; }
   .body .formReg {
     font-size: 3rem; }
     .body .formReg .divform {
