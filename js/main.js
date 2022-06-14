@@ -1,31 +1,32 @@
 // document.addEventListener("DOMContentLoaded", () => {})         pa no olvidarme
 const userList = [];
+class UserData {
+  constructor(user, password, mail, personajes) {
+    this.user = user;
+    this.password = password;
+    this.mail = mail;
+    this.personajes = personajes;
+  }
+}
 //Variables declaradas
 let user = "";
 let raza = "";
 let clase = "";
 let password = "";
+let password2 = "";
 let mail = "";
+const personajes = [];
 
-let btnReg = "";
-let userBtn = "";
-let passBtn = "";
-
-agregarEvent(btnReg, "btnRegister", "click", () => {
-  refresh(btnReg, "btnPadre", "");
-});
-
-agregarEvent(btnReg, "btnRegister", "click", () => {
-  refresh(
-    btnReg,
-    "regSelects",
-    `<p class="registerText">Bienvenido a Javascriptia, defensor del Código. Elige tu nombre <strong>(con cuidado, todos lo recordarán!)</strong></p>
-        <label for="user" class="label">Tu nombre:</label>
-        <input type="text" id="user">
-        <button type="submit" id="btn1" class="boton">Este es mi nombre!</button>`
-  );
-  acceptUser()
-});
-
-
+let btnReg = document.getElementById("btn1");
+btnReg.addEventListener("click", (e)=>{e.preventDefault()})
+btnReg.addEventListener("click",() => {
+  ()=>{return user = document.getElementById("user").value}
+  ()=>{return password = document.getElementById("password").value}
+  ()=>{return password2 = document.getElementById("password2").value}
+  ()=>{return mail = document.getElementById("mail").value}
+  console.log(user)
+  console.log(password)
+  console.log(password2)
+  console.log(mail)
+})
 

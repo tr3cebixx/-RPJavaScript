@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/css/main.css">
+    <script src="../js/clases.js"></script>
+    <script src="../js/razas.js"></script>
+    <title>Registro</title>
+</head>
+
+<body class="body">
+    <h1 class="title"><a href="../index.html">RPJavaScript</a></h1>
+    <h2 class="title2">REGISTRO DE GREMIO</h2>
+    <div class="div">
+        <form class="form">
+            <p class="registerText">Bienvenido a Javascriptia, defensor del Código. Ingresa tus datos <strong>(con
+                    cuidado, todos lo recordarán!)</strong></p>
+            <label class="label" for="user">Tu nombre:</label>
+            <input type="text" id="user">
+            <p class="errorText"><strong>Estoy seguro de que tienes algún nombre, no seas tímido</strong></p>
+            <p class="approvalText"><strong>Así que te llamas ${user}? Un nombre apropiado para uno de los
+                    defensores
+                    del Código.</strong></p>
+            <p class="registerText">Ingresa tu contraseña, pero no vayas a olvidarla</p>
+            <label for="password" class="label">Tu contraseña:</label>
+            <input type="password" name="password" id="password" autocomplete="off">
+            <p class="errorText"><strong>Debes ingresar una buena contraseña, sino cualquiera podría
+                    robarte...</strong>
+            </p>
+            <label for="password2" class="label">Repite tu contraseña, para asegurarnos que la recuerdes</label>
+            <input type="password" name="password2" id="password2" autocomplete="off">
+            <p class="errorText"><strong>Hey, las contraseñas no coinciden, escribe con mas cuidado,
+                    ${user}!</strong>
+            </p>
+            <p class="approvalText"><strong>Muy bien! Esta será tu nueva contraseña</strong></p>
+            <p class="registerText">Muy bien, ${user}, ahora necesitaré que me indiques tu correo electrónico para
+                que
+                estés al tanto de todo lo que sucede en Javascriptia</p>
+            <label for="mail" class="label">E-mail:</label>
+            <input type="email" name="mail" id="mail">
+            <p class="errorText"><strong>"${mail}"? Ingresa un formato de correo válido (ej:
+                    orcusporcus@mail.com)</strong></p>
+            <label for="raza" class="label">Elige una raza:</label>
+            <select id="raza" name="raza" class="boton">
+                <option value="humano">Humano</option>
+                <option value="orco">Orco</option>
+                <option value="elfo">Elfo</option>
+                <option value="enano">Enano</option>
+                <option value="goblin">Goblin</option>
+                <option value="trol">Trol</option>
+                <option value="demonio">Demonio</option>
+            </select>
+            <label for="clase" class="label">Elige una clase:</label>
+            <select id="clase" name="clase" class="boton">
+                <option value="caballero">Caballero</option>
+                <option value="berserker">Berserker</option>
+                <option value="paladin">Paladin</option>
+                <option value="cazador">Cazador</option>
+                <option value="asesino">Asesino</option>
+                <option value="mago">Mago</option>
+                <option value="brujo">Brujo</option>
+                <option value="sacerdote">Sacerdote</option>
+                <option value="espadachin">Espadachin</option>
+                <option value="caballero oscuro">Caballero Oscuro</option>
+                <option value="monje">Monje</option>
+            </select>
+            <button type="submit" id="btn1" class="boton">Enviar mis datos!</button>
+            <p class="approvalText"><strong>Perfecto, ${user}, es solo cuestión de tiempo hasta que te comiencen a llegar las proximas ediciones del JS Times a: ${mail}</strong></p>
+        </form>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+
+.body {
+  display: block;
+  background-image: radial-gradient(#555454, #994d4d, #474541);
+  text-align: center;
+  font-size: 1rem;
+  min-height: 100vh; }
+  .body .title2 {
+    display: block;
+    background-image: radial-gradient(#c98a4b, #521e0e);
+    font-size: 3rem;
+    border: 1rem #874040 groove;
+    margin-top: 1rem; }
+  .body .title {
+    border: 1rem goldenrod groove;
+    background-color: #474541;
+    text-decoration: none;
+    color: #000000;
+    font-size: 5rem; }
+    .body .title a:link,
+    .body .title a:visited,
+    .body .title a:hover,
+    .body .title a:active {
+      text-decoration: none;
+      color: #000000; }
+  .body #btnPadre .boton {
+    height: 3.5rem;
+    border: 0.3rem #5a5353 solid;
+    display: block;
+    margin: 2rem auto;
+    background-color: #3f2525;
+    font-size: large;
+    transition: all; }
+    .body #btnPadre .boton a:link,
+    .body #btnPadre .boton a:visited,
+    .body #btnPadre .boton a:hover,
+    .body #btnPadre .boton a:active {
+      text-decoration: none;
+      color: #000000; }
+    .body #btnPadre .boton .boton:hover {
+      transform: scale(1.3, 1.3); }
+  .body #charStats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem; }
+    .body #charStats .liStats {
+      display: inline-block;
+      border: 0.5rem goldenrod groove;
+      background-color: #474441;
+      margin-bottom: 3rem; }
+  .body .div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem; }
+    .body .div .form {
+      min-width: 50rem;
+      min-height: 35rem;
+      border: goldenrod groove 1rem;
+      background-image: radial-gradient(#3f2525, #474541);
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .body .div .form .registerText {
+        margin-top: 1rem;
+        font-size: 3rem;
+        color: #000000;
+        background-image: radial-gradient(#474541, #3f2525);
+        text-shadow: #3f2525;
+        text-decoration: double;
+        display: block;
+        background-color: #474541;
+        border: #000000 solid 0.5rem; }
+      .body .div .form .label {
+        font-size: 3rem;
+        color: #000000;
+        text-shadow: #3f2525;
+        background-image: radial-gradient(#474541, #3f2525);
+        text-decoration: double;
+        display: block;
+        background-color: #474541;
+        margin-top: 1rem;
+        border: #000000 solid 0.5rem; }
+      .body .div .form .boton {
+        font-size: 3rem;
+        color: #000000;
+        text-shadow: #3f2525;
+        text-decoration: double;
+        display: block;
+        background-color: #474541;
+        border: goldenrod groove 1rem;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem; }
+      .body .div .form .errorText {
+        display: none;
+        font-size: 3rem;
+        color: #000000;
+        text-shadow: #bd2b2b;
+        text-decoration: underline;
+        background-color: #d30303;
+        border: #6a0000 groove 1rem;
+        margin-bottom: 1rem; }
+      .body .div .form .approvalText {
+        display: none;
+        font-size: 3rem;
+        color: #000000;
+        text-shadow: #56b967;
+        text-decoration: underline;
+        background-color: #56b967;
+        border: #1f9202 groove 1rem;
+        margin-bottom: 1rem; }
+      .body .div .form #user {
+        font-size: 3rem;
+        color: #000000;
+        text-shadow: #3f2525;
+        text-decoration: double;
+        display: block;
+        background-color: #474541;
+        border: #3f2525 groove 1rem;
+        margin-top: 1rem; }
+      .body .div .form #password {
+        font-size: 3rem;
+        color: #000000;
+        text-shadow: #3f2525;
+        text-decoration: double;
+        display: block;
+        background-color: #474541;
+        border: #3f2525 groove 1rem;
+        margin-top: 1rem; }
+      .body .div .form #password2 {
+        font-size: 3rem;
+        color: #000000;
+        text-shadow: #3f2525;
+        text-decoration: double;
+        display: block;
+        background-color: #474541;
+        border: #3f2525 groove 1rem;
+        margin-top: 1rem; }
+      .body .div .form #mail {
+        font-size: 3rem;
+        color: #000000;
+        text-shadow: #3f2525;
+        text-decoration: double;
+        display: block;
+        background-color: #474541;
+        border: #3f2525 groove 1rem;
+        margin-top: 1rem; }
