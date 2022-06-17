@@ -100,7 +100,8 @@
         margin-right: auto;
         margin-bottom: 1rem; }
       .body .div .form .errorText {
-        display: none;
+        display: block;
+        margin-top: 1rem;
         font-size: 3rem;
         color: #000000;
         text-shadow: #bd2b2b;
@@ -109,7 +110,7 @@
         border: #6a0000 groove 1rem;
         margin-bottom: 1rem; }
       .body .div .form .approvalText {
-        display: none;
+        display: block;
         font-size: 3rem;
         color: #000000;
         text-shadow: #56b967;
@@ -153,3 +154,5 @@
         background-color: #474541;
         border: #3f2525 groove 1rem;
         margin-top: 1rem; }
+      .body .div .form .displayHidden {
+        display: none; }
