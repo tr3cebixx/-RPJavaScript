@@ -59,6 +59,12 @@
     flex-direction: column;
     align-items: center;
     margin-top: 2rem; }
+    .body .div .characterX {
+      display: flex;
+      flex-direction: row;
+      background-color: #474541;
+      border: goldenrod groove 1rem;
+      margin-top: 1rem; }
     .body .div .form {
       min-width: 50rem;
       min-height: 35rem;
@@ -99,6 +105,12 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 1rem; }
+        .body .div .form .boton a:link,
+        .body .div .form .boton a:visited,
+        .body .div .form .boton a:hover,
+        .body .div .form .boton a:active {
+          text-decoration: none;
+          color: #000000; }
       .body .div .form .errorText {
         display: block;
         margin-top: 1rem;

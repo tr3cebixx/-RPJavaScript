@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
             this.clase = clase;
         }
     }
+    userList = JSON.parse(localStorage.getItem("userList"))
     let btnChar = document.getElementById("btnChar");
-    btnChar.addEventListener("click", (e)=>{e.preventDefault()})
     btnChar.addEventListener("click", () => {
         raza = raza.value;
         clase = clase.value;
@@ -20,11 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("El personaje no se guardó, intentelo de nuevo")
         }else{
             let character = new NewCharacter (nombre, raza, clase);
-            console.log(character);
-            console.log(profile.personajes)
             profile.personajes.push(character);
-            console.log(profile.personajes)
             localStorage.setItem("profile", JSON.stringify(profile));
+            localStorage.setItem("userList", JSON.stringify(userList));
         }
     })
 

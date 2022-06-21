@@ -26,8 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
     password2 = password2.value;
     mail = mail.value;
     document.getElementById("approvalForm").classList.remove("displayHidden")
-    profile = new UserData(user, password, mail, personajes)
+    profile = new UserData(user, password, mail, personajes);
+    userList.push(profile);
     localStorage.setItem("profile", JSON.stringify(profile));
+    localStorage.setItem("userList", JSON.stringify(userList));
   });
   user.addEventListener("input", () => {
     (user.value !== "")?(document.getElementById("errorUser").classList.add("displayHidden")):(document.getElementById("errorUser").classList.remove("displayHidden"));
