@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let raza = document.getElementById("raza");
     let clase = document.getElementById("clase");
     let nombre = document.getElementById("name");
+    let BBDD = JSON.parse(localStorage.getItem("BBDD"));
     let profile = JSON.parse(localStorage.getItem("profile"));
     class NewCharacter {
         constructor (nombre, raza, clase){
@@ -10,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
             this.clase = clase;
         }
     }
-    userList = JSON.parse(localStorage.getItem("userList"))
     let btnChar = document.getElementById("btnChar");
+    btnChar.addEventListener("click", (e)=>{e.preventDefault()})
     btnChar.addEventListener("click", () => {
         raza = raza.value;
         clase = clase.value;
@@ -22,8 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
             let character = new NewCharacter (nombre, raza, clase);
             profile.personajes.push(character);
             localStorage.setItem("profile", JSON.stringify(profile));
-            localStorage.setItem("userList", JSON.stringify(userList));
         }
     })
-
 })
