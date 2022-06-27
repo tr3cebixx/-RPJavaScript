@@ -6,19 +6,40 @@
 
 .body {
   display: block;
-  background-image: radial-gradient(#555454, #994d4d, #474541);
+  background-image: radial-gradient(#555454, #0e4b4d, #474541);
   text-align: center;
   font-size: 1rem;
   min-height: 100vh; }
+  .body .header .nav {
+    text-align: center;
+    background-color: #669d9f;
+    border: groove 1rem #474248; }
+    .body .header .nav .navUl {
+      display: inline-block;
+      list-style: none;
+      padding: auto; }
+      .body .header .nav .navUl .navLi {
+        font-size: 3rem;
+        float: right;
+        margin: auto;
+        display: block;
+        border: groove 1rem #0e4b4d;
+        background-image: radial-gradient(#669d9f, #0e4b4d, #151a1a); }
+        .body .header .nav .navUl .navLi a:link,
+        .body .header .nav .navUl .navLi a:visited,
+        .body .header .nav .navUl .navLi a:hover,
+        .body .header .nav .navUl .navLi a:active {
+          text-decoration: none;
+          color: #000000; }
   .body .title2 {
     display: block;
-    background-image: radial-gradient(#c98a4b, #521e0e);
+    background-image: radial-gradient(#669d9f, #0e4b4d);
     font-size: 3rem;
-    border: 1rem #874040 groove;
-    margin-top: 1rem; }
+    border: 1rem #474248 groove;
+    margin-top: 2rem; }
   .body .title {
     border: 1rem goldenrod groove;
-    background-color: #474541;
+    background-color: #7c6a2f;
     text-decoration: none;
     color: #000000;
     font-size: 5rem; }
@@ -54,11 +75,67 @@
       border: 0.5rem goldenrod groove;
       background-color: #474441;
       margin-bottom: 3rem; }
+  .body .divPerfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+    .body .divPerfil #miInfo {
+      width: auto;
+      background-image: linear-gradient(#7c6a2f, #948c71);
+      height: auto;
+      margin-top: 1rem; }
+      .body .divPerfil #miInfo .title3 {
+        display: block;
+        background-color: #7c6a2f;
+        font-size: 2rem;
+        border: 1rem #474248 groove; }
+      .body .divPerfil #miInfo ul {
+        display: block; }
+        .body .divPerfil #miInfo ul li {
+          border: #151a1a 1rem groove;
+          display: block;
+          height: auto;
+          margin: 0.5rem;
+          font-size: 2rem;
+          background-color: #669d9f; }
+    .body .divPerfil #misChars {
+      border: goldenrod groove 1rem;
+      width: auto;
+      background-image: linear-gradient(#7c6a2f, #948c71);
+      height: auto;
+      margin-top: 1rem; }
+      .body .divPerfil #misChars .title3 {
+        display: block;
+        background-color: #7c6a2f;
+        font-size: 2rem;
+        border: 1rem #474248 groove; }
+      .body .divPerfil #misChars #labelChars li {
+        background-image: radial-gradient(#669d9f, #0e4b4d, #151a1a);
+        margin: 1rem; }
+      .body .divPerfil #misChars ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style: none;
+        width: auto; }
+        .body .divPerfil #misChars ul li {
+          width: 30vw;
+          height: auto;
+          margin: 0.5rem;
+          font-size: 2rem;
+          float: left;
+          background-color: #669d9f;
+          border: #0e4b4d groove 1rem; }
   .body .div {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 2rem; }
+    .body .div .title3 {
+      display: block;
+      background-color: #7c6a2f;
+      font-size: 2rem;
+      border: 1rem #474248 groove; }
     .body .div .characterX {
       display: flex;
       flex-direction: row;

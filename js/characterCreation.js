@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let raza = document.getElementById("raza");
-    let clase = document.getElementById("clase");
-    let nombre = document.getElementById("name");
+    let raza = "";
+    let clase = "";
+    let nombre = "";
+    function fnInputs(){
+        raza = document.getElementById("raza");
+        clase = document.getElementById("clase");
+        nombre = document.getElementById("name");
+    }
+    fnInputs();
     let BBDD = JSON.parse(localStorage.getItem("BBDD"));
     let profile = JSON.parse(localStorage.getItem("profile"));
     class NewCharacter {
@@ -22,7 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }else{
             let character = new NewCharacter (nombre, raza, clase);
             profile.personajes.push(character);
+            for (let i = 0; i < BBDD.length; i++) {
+                if (profile.user == BBDD[i].user) {
+                    BBDD[i].personajes.push(character);
+                    localStorage.setItem("BBDD", JSON.stringify(BBDD));
+                    
+                }
+            }
             localStorage.setItem("profile", JSON.stringify(profile));
         }
+        fnInputs();
     })
 })

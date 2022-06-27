@@ -45,57 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
     password2 = password2.value;
     mail = mail.value;
 
-    if (BBDD.length > 1) {
-      for (let i = 0; i < BBDD.length; i++) {
-        if (user == BBDD[i].user) {
-          Swal.fire({
-            title: "Error!",
-            text: `El nombre ${profile.user} ya existe!`,
-            icon: "error",
-            confirmButtonText: "Elegir otro usuario",
-          });
-        } else if (mail == BBDD[i].mail) {
-          Swal.fire({
-            title: "Error!",
-            text: `La dirección de correo ${profile.mail} ya existe!`,
-            icon: "error",
-            confirmButtonText: "Elegir otro mail",
-          });
-        } else {
-          let database = localStorage.getItem("BBDD");
-          database = JSON.parse(database);
-          profile = new UserData(user, password, mail, personajes);
-          BBDD.push(profile);
-          console.table(BBDD)
+    let database = localStorage.getItem("BBDD");
+    database = JSON.parse(database);
+    profile = new UserData(user, password, mail, personajes);
+    BBDD.push(profile);
+    console.table(BBDD);
 
-          if (database != null) {
-            BBDD = BBDD.concat(database);
-          }
-          localStorage.setItem("BBDD", JSON.stringify(BBDD));
-          localStorage.setItem("profile", JSON.stringify(profile));
-          BBDD.pop();
-          alertReg();
-          getElems();
-          
-        }
-      }
-    } else {
-      let database = localStorage.getItem("BBDD");
-      database = JSON.parse(database);
-      profile = new UserData(user, password, mail, personajes);
-      BBDD.push(profile);
-      console.table(BBDD)
-
-      if (database != null) {
-        BBDD = BBDD.concat(database);
-      }
-      localStorage.setItem("BBDD", JSON.stringify(BBDD));
-      localStorage.setItem("profile", JSON.stringify(profile));
-      BBDD.pop()
-      alertReg();
-      getElems();
-
+    if (database != null) {
+      BBDD = BBDD.concat(database);
     }
+    localStorage.setItem("BBDD", JSON.stringify(BBDD));
+    localStorage.setItem("profile", JSON.stringify(profile));
+    BBDD.pop();
+    getElems();
+    alertReg();
   });
 
   // const baseLocal = () =>
