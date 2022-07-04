@@ -26,7 +26,7 @@ const fetchBS = async () => {
   let divBS = document.getElementById("divBS");
   divBS.style.border = "goldenrod groove 1rem";
   divBS.style.backgroundColor = "#7c6a2f";
-  for (let i = 10; i <= 100; i++) {
+  for (let i = 50; i <= 200; i++) {
     if (arrayFetch[i].name != "RC Controller") {
       divChildBS = document.createElement("div");
       divChildBS.className += "divChildBS";
