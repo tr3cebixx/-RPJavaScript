@@ -37,7 +37,7 @@ const fetchBS = async () => {
   arrayFetch.forEach(x=>x.data_id = arrayFetch.indexOf(x))
   console.log(arrayFetch);
   //Plasmo items al DOM
-  for (let i = 0; i <= 200; i++) {
+  for (i = 0; i <= 200; i++) {
     divChildBS = document.createElement("div");
     divChildBS.className += "divChildBS";
     divBS.appendChild(divChildBS);
@@ -98,7 +98,7 @@ const fetchBS = async () => {
   btnBuy = document.getElementsByClassName("btnBuy");
   for (i = 0; i < btnBuy.length; i++) {
     btnBuy[i].addEventListener("click", () => {
-      if (i == arrayFetch[i].data_id){
+      if (arrayFetch[i].data_id = i){
         inventario.push(arrayFetch[i]);
         console.log(arrayFetch[i])
       }
