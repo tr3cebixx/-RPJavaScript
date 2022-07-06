@@ -1,11 +1,12 @@
 let BBDD = [];
 document.addEventListener("DOMContentLoaded", () => {
   class UserData {
-    constructor(user, password, mail, personajes) {
+    constructor(user, password, mail, personajes, inventario) {
       this.user = user;
       this.password = password;
       this.mail = mail;
       this.personajes = personajes;
+      this.inventario = inventario
     }
   }
   let profile = "";
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let password2 = "";
   let mail = "";
   let personajes = [];
+  let inventario = [];
 
   const getElems = () => {
     user = document.getElementById("user");
@@ -47,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let database = localStorage.getItem("BBDD");
     database = JSON.parse(database);
-    profile = new UserData(user, password, mail, personajes);
+    profile = new UserData(user, password, mail, personajes, inventario);
     BBDD.push(profile);
     console.table(BBDD);
 

@@ -20,7 +20,7 @@ const defensores = [humano, elfo, goblin, enano];
 const legion = [orco, trol, demonio];
 const razasPermitidas = defensores.concat(legion);
 
-class City {
+class Ciudad {
   constructor(nombre, lider, razaNata, poblacion, faccionAlly, capital) {
     this.nombre = nombre;
     this.lider = lider;
@@ -31,26 +31,28 @@ class City {
   }
 }
 
-const Rasganorte = new City("Rasganorte", "Varyann Hunterville", humano, 250000, "Defensores del Código", false );
+const Rasganorte = new Ciudad("Rasganorte", "Varyann Hunterville", "Humano", 250000, "Defensores del Código", false );
 humano.city = Rasganorte;
-const SilverCitadel = new City("Ciudadela de Plata", "Idril Elentari", elfo, 400000, "Defensores del Código", true);
+const SilverCitadel = new Ciudad("Ciudadela de Plata", "Idril Elentari", "Elfo", 400000, "Defensores del Código", true);
 elfo.city = SilverCitadel;
-const Nordinbad = new City("Nordinbad", ["Thorin Thundergrimm", "Thurimar Thundergrimm", "Magni Thundergrimm"], enano, 200000, "Defensores del Código", false);
+const Nordinbad = new Ciudad("Nordinbad", ["Thorin Thundergrimm", "Thurimar Thundergrimm", "Magni Thundergrimm"], "Enano", 200000, "Defensores del Código", false);
 enano.city = Nordinbad;
-const Metropoblinks = new City("Metrópoblinks", "Dazz Gallywix", goblin, 200000, "Defensores del Código", false);
+const Metropoblinks = new Ciudad("Metrópoblinks", "Dazz Gallywix", "Goblin", 200000, "Defensores del Código", false);
 goblin.cit
-const LokTarOgar = new City("Fuerte Lok'Tar Ogar", "Zug Ironhand", orco, 350000, "Legión Demoníaca", false);
-const VolJamba = new City("Aldea Vol'Jamba", "Jah'Mamba Blackspear", trol, 200000, "Legión Demoníaca", false);
-const AbyssalVoid = new City("Vacío Abisal", "Azazel Morningstar", demonio, 500000, "Legión Demoníaca", true);
+const LokTarOgar = new Ciudad("Fuerte Lok'Tar Ogar", "Zug Ironhand", "Orco", 350000, "Legión Demoníaca", false);
+const VolJamba = new Ciudad("Aldea Vol'Jamba", "Jah'Mamba Blackspear", "Trol", 200000, "Legión Demoníaca", false);
+const AbyssalVoid = new Ciudad("Vacío Abisal", "Azazel Morningstar", "Demonio", 500000, "Legión Demoníaca", true);
 
 const ciudades = [Rasganorte, SilverCitadel, Nordinbad, Metropoblinks, LokTarOgar, VolJamba, AbyssalVoid];
 
 razasPermitidas.forEach((x)=>{
   for (let i = 0; i < ciudades.length; i++) {
-    if(x == ciudades[i].razaNata){
+    if(x.race == ciudades[i].razaNata){
       x.city = ciudades[i];
       console.log(x.city)
     } 
   }
 })
 console.table(razasPermitidas)
+localStorage.setItem("razasPermitidas", JSON.stringify(razasPermitidas));
+localStorage.setItem("ciudades", JSON.stringify(ciudades));
