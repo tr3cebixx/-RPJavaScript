@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (raza.value == razasPermitidas[i].race) {
         divRazas.innerHTML = `
                 <p class="dataRace1">RAZA: <span>${razasPermitidas[i].race.toUpperCase()}</span></p>
-                <p class="dataRace1">PASIVA: <span>${razasPermitidas[i].passive.toUpperCase()}</span></p>
-                <p class="dataRace1">FACCIÓN: <span>${razasPermitidas[i].faction.toUpperCase()}</span></p>
+                <p class="dataRace1">PASIVA: <span>${razasPermitidas[i].passive}</span></p>
+                <p class="dataRace1">FACCIÓN: <span>${razasPermitidas[i].faction}</span></p>
                 <div id="dataRaceDiv">
-                    <p class="dataRace2">CIUDAD: <span>${razasPermitidas[i].city.nombre.toUpperCase()}</span></p>
+                    <p class="dataRace2">CIUDAD: <span>${razasPermitidas[i].city.nombre}</span></p>
                     <p class="dataRace2">LÍDER: <span>${razasPermitidas[i].city.lider}</span></p>
                     <p class="dataRace2">POBLACIÓN TOTAL: <span>${razasPermitidas[i].city.poblacion}</span></p>
                 </div>

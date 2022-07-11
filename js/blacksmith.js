@@ -11,7 +11,7 @@ let btnSell = "";
 localStorage.setItem("inventario", JSON.stringify(inventario));
 const childBS = () => {
   divChildBS = document.getElementsByClassName("divChildBS");
-  for (i = 0; i < divChildBS.length; i++) {
+  for (let i = 0; i < divChildBS.length; i++) {
     divChildBS[i].style.backgroundColor = "#0e4b4d";
     divChildBS[i].style.border = "#474541 groove 1rem";
     divChildBS[i].style.margin = "1rem";
@@ -21,7 +21,7 @@ const childBS = () => {
 };
 const dataBS = () => {
   img = document.getElementsByClassName(`img`);
-  for (i = 0; i < img.length; i++) {
+  for (let i = 0; i < img.length; i++) {
     img[i].style.maxHeight = "5rem";
     img[i].style.maxWidth = "5rem";
     img[i].style.border = "#474541 groove 0.5rem";
@@ -29,7 +29,7 @@ const dataBS = () => {
   }
 
   restLvl = document.getElementsByClassName(`restLvl`);
-  for (i = 0; i < restLvl.length; i++) {
+  for (let i = 0; i < restLvl.length; i++) {
     restLvl[i].style.color = "#4d0000";
     restLvl[i].style.fontSize = "1.5rem";
     restLvl[i].style.border = "0.3rem #000000 groove";
@@ -37,12 +37,12 @@ const dataBS = () => {
   }
 
   p = document.getElementsByClassName(`p`);
-  for (i = 0; i < p.length; i++) {
+  for (let i = 0; i < p.length; i++) {
     p[i].style.color = "#151a1a";
   }
 
   h3 = document.getElementsByClassName("h3");
-  for (i = 0; i < img.length; i++) {
+  for (let i = 0; i < img.length; i++) {
     h3[i].style.border = "goldenrod 0.3rem groove";
     h3[i].style.backgroundColor = "#474541";
   }
@@ -59,13 +59,13 @@ const fetchBS = async () => {
   divBS.style.backgroundColor = "#7c6a2f";
   //Elimino resultados innecesarios del arrayFetch
   arrayFetch = arrayFetch.filter((item) => item.name != "RC Controller");
-  for (i = 0; i < 30; i++) {
+  for (let i = 0; i < 30; i++) {
     arrayFetch.shift();
   }
   arrayFetch.forEach((x) => (x.data_id = arrayFetch.indexOf(x)));
   console.log(arrayFetch);
   //Plasmo items al DOM
-  for (i = 0; i <= 200; i++) {
+  for (let i = 0; i <= 200; i++) {
     divChildBS = document.createElement("div");
     divChildBS.className += "divChildBS";
     divBS.appendChild(divChildBS);
@@ -94,14 +94,16 @@ const fetchBS = async () => {
     btn[i].style.fontSize = "1rem";
     btn[i].style.padding = "0.3rem";
     btn[i].style.backgroundColor = "#7c6a2f";
-
-    //Agregar item al inventario, todavia no encuentro la forma
+    
+    //Agregar item al inventario.
     btn[i].addEventListener("click", () => {
-      inventario = JSON.parse(localStorage.getItem("inventario"));
-      inventario.push(arrayFetch[i]);
-      console.log(inventario);
-      localStorage.setItem("inventario", JSON.stringify(inventario));
+      profile = JSON.parse(localStorage.getItem("profile"));
+      profile.inventario.push(arrayFetch[i]);
+      console.log(profile.inventario);
+      localStorage.setItem("profile", JSON.stringify(profile));
     });
   }
 };
 fetchBS();
+
+export {dataBS};

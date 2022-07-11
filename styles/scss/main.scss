@@ -116,7 +116,7 @@
             background-image: linear-gradient(#7c6a2f, #948c71);
             height: auto;
             margin-top: 1rem;
-
+            border: 1rem goldenrod groove; 
             .title3 {
                 display: block;
                 background-color: #7c6a2f;
@@ -136,6 +136,36 @@
                     background-color: #669d9f;
 
                 }
+            }
+        }
+
+        #inventario {
+            display: block;
+            width: auto;
+            background-image: linear-gradient(#7c6a2f, #948c71);
+            height: auto;
+            margin-top: 1rem;
+            border: 1rem goldenrod groove;
+            .title3 {
+                display: block;
+                background-color: #7c6a2f;
+                font-size: 2rem;
+                border: 1rem #474248 groove;
+            }
+        }
+
+        #equipamiento {
+            display: block;
+            width: auto;
+            background-image: linear-gradient(#7c6a2f, #948c71);
+            height: auto;
+            margin-top: 1rem;
+            border: 1rem goldenrod groove;
+            .title3 {
+                display: block;
+                background-color: #7c6a2f;
+                font-size: 2rem;
+                border: 1rem #474248 groove;
             }
         }
 
@@ -186,7 +216,7 @@
         flex-direction: column;
         align-items: center;
         margin-top: 2rem;
-        
+
         .title3 {
             display: block;
             background-color: #7c6a2f;
