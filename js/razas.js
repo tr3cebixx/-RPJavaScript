@@ -7,7 +7,7 @@ class Raza {
     this.city = city;
   }
 }
-
+//tuve que crearlo como strings, por ahora...
 const humano = new Raza("Humano", "Defensores del Código", "Orgullo humano", "Rasganorte");
 const orco = new Raza("Orco", "Legión Demoníaca", "Furia ciega", "Fuerte Lok'Tar Ogar");
 const elfo = new Raza("Elfo", "Defensores del Código", "Ojo de Halcón", "Ciudadela de Plata");
@@ -19,7 +19,7 @@ const demonio = new Raza("Demonio", "Legión Demoníaca", "Presencia demoníaca"
 const defensores = [humano, elfo, goblin, enano];
 const legion = [orco, trol, demonio];
 const razasPermitidas = defensores.concat(legion);
-
+//creo la clase ciudad para hacer las ciudades de cada raza
 class Ciudad {
   constructor(nombre, lider, razaNata, poblacion, faccionAlly, capital) {
     this.nombre = nombre;
@@ -44,7 +44,7 @@ const VolJamba = new Ciudad("Aldea Vol'Jamba", "Jah'Mamba Blackspear", "Trol", 2
 const AbyssalVoid = new Ciudad("Vacío Abisal", "Azazel Morningstar", "Demonio", 500000, "Legión Demoníaca", true);
 
 const ciudades = [Rasganorte, SilverCitadel, Nordinbad, Metropoblinks, LokTarOgar, VolJamba, AbyssalVoid];
-
+//esto me permite reemplazar el string utilizado en la ciudad de cada raza por un objeto clase Ciudad, para evitar errores de declaración
 razasPermitidas.forEach((x)=>{
   for (let i = 0; i < ciudades.length; i++) {
     if(x.race == ciudades[i].razaNata){

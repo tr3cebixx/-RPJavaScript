@@ -23,12 +23,9 @@ const cazador = new Clase("Cazador", "A distancia", "Arco y flecha/Ballesta", "A
 const asesino = new Clase("Asesino", "Melee", "Doble empuñadura de cuchillas", "Doble empuñadura de una mano", 450, "Energía", 90, 5, 50, 55);
 const mago = new Clase("Mago", "A distancia", "Bastón de dos manos", "Arma de una mano y arma de mano izquierda", 370, "Maná", 20, 100, 40, 40);
 const sacerdote = new Clase("Sacerdote", "A distancia", "Bastón de dos manos", "Arma de una mano y arma de mano izquierda", 350, "Maná", 10, 110, 35, 45);
-const espadachin = new Clase("Espadachín", "Híbrido", "Estilo de katana múltiple", "Katana, Tachi y Wakizashi", 450, "Haki", 110, 0, 55, 55);
+const espadachin = new Clase("Espadachin", "Híbrido", "Estilo de katana múltiple", "Katana, Tachi y Wakizashi", 450, "Haki", 110, 0, 55, 55);
 const caballeroOscuro = new Clase("Caballero Oscuro", "Híbrido", "Arma de dos manos", "Doble empuñadura de una mano", 500, "Necromaná", 60, 40, 45, 55);
 const monje = new Clase("Monje", "Melee", "Doble empuñadura de armas de puño/armas de una mano", "Armas de dos manos", 400, "Haki", 65, 65, 35, 35);
 
-const clasesPermitidas = [];
-clasesPermitidas.push(caballero, berserker, cazador, asesino, mago, sacerdote, espadachin, caballeroOscuro, monje);
-// for (const clase of clasesPermitidas) {
-//   console.log(clase)
-// }
+const clasesPermitidas = [caballero, berserker, cazador, asesino, mago, sacerdote, espadachin, caballeroOscuro, monje];
+localStorage.setItem("clasesPermitidas", JSON.stringify(clasesPermitidas));

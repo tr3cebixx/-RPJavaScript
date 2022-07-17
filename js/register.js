@@ -1,3 +1,4 @@
+//creo base de datos y clase UserData para crear cada perfil
 let BBDD = [];
 document.addEventListener("DOMContentLoaded", () => {
   class UserData {
@@ -17,14 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let mail = "";
   let personajes = [];
   let inventario = [];
-
+  //funcion para tomar inputs en variables
   const getElems = () => {
     user = document.getElementById("user");
     password = document.getElementById("password");
     password2 = document.getElementById("password2");
     mail = document.getElementById("mail");
   };
-
+  //sweet alert
   function alertReg() {
     Swal.fire({
       title: "Perfecto!",
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   getElems();
-
+  //agrego evento "click" al boton de registro, tomo los values de los inputs, traigo la database del local storage y si no esta vacía, concatenamos con la BBDD. luego creo un nuevo profile clase UserData, pusheandolo a la BBDD y seteando BBDD y profile en el local storage.
   let btnReg = document.getElementById("btn1");
   btnReg.addEventListener("click", (e) => {
     e.preventDefault();
@@ -49,38 +50,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let database = localStorage.getItem("BBDD");
     database = JSON.parse(database);
+    if (database != null) {
+      BBDD = BBDD.concat(database);
+    }
     profile = new UserData(user, password, mail, personajes, inventario);
     BBDD.push(profile);
     console.table(BBDD);
 
-    if (database != null) {
-      BBDD = BBDD.concat(database);
-    }
     localStorage.setItem("BBDD", JSON.stringify(BBDD));
     localStorage.setItem("profile", JSON.stringify(profile));
+    //el .pop() es para evitar que al crear muchos usuarios, se multipliquen en la base de datos, luego vuelvo a tomar los inputs en las variables para el proximo evento de click y tiro la sweet alert
     BBDD.pop();
     getElems();
     alertReg();
   });
-
-  // const baseLocal = () =>
-
-  //   if (
-  //     contador == contador + 1 &&
-  //     user !=
-  //       BBDD.forEach((e) => {
-  //         user = e.user;
-  //       })
-  //   ) {
-  //     localStorage.setItem("BBDD", JSON.stringify(BBDD));
-  //   } else if (
-  //     user !=
-  //     BBDD.forEach((e) => {
-  //       user = e.user;
-  //     })
-  //   ) {
-  //     alert(`el usuario ${user} ya existe`);
-  //   }
+  //clase hidden de los mensajes de error y success
   user.addEventListener("input", () => {
     user.value !== ""
       ? document.getElementById("errorUser").classList.add("displayHidden")

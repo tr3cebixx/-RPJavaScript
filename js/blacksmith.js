@@ -6,9 +6,9 @@ let btn = "";
 let restLvl = "";
 let h3 = "";
 let inventario = [];
-let btnBuy = "";
-let btnSell = "";
+let profile = "";
 localStorage.setItem("inventario", JSON.stringify(inventario));
+//funciones de estilo
 const childBS = () => {
   divChildBS = document.getElementsByClassName("divChildBS");
   for (let i = 0; i < divChildBS.length; i++) {
@@ -47,13 +47,14 @@ const dataBS = () => {
     h3[i].style.backgroundColor = "#474541";
   }
 };
+//funcion asíncrona
 const fetchBS = async () => {
   await fetch("https://www.gw2spidy.com/api/v0.9/json/all-items/all")
     // Exito
     .then((response) => response.json()) // convertir a json
     .then((json) => (arrayFetch = json.results)) //pasar el array del fetch a una variable
     .catch((err) => console.log("Solicitud fallida", err)); // Capturar errores
-
+  //estilo del div
   let divBS = document.getElementById("divBS");
   divBS.style.border = "goldenrod groove 1rem";
   divBS.style.backgroundColor = "#7c6a2f";
@@ -77,7 +78,7 @@ const fetchBS = async () => {
           <p class="p">Offer Availability=${arrayFetch[i].offer_availability}</p>
           <p class="p">Sale Availability=${arrayFetch[i].sale_availability}</p>
           <p class="p">Rarity=${arrayFetch[i].rarity}</p>
-          <button class="btn btnBuy">BUY</button>
+          <button class="btn">BUY</button>
           <p class="restLvl">Nivel requerido=${arrayFetch[i].restriction_level}</p>
           `;
   }
